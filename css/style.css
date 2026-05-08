@@ -1,0 +1,59 @@
+/* Market Cognition — 暖色阅读友好风格 */
+:root {
+  --bg: #fdfaf6;
+  --text: #333;
+  --accent: #c44;
+  --border: #e8e0d5;
+  --card-bg: #fff;
+  --max-width: 680px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: Georgia, "Noto Serif SC", "Source Han Serif SC", serif;
+  font-size: 18px;
+  line-height: 1.8;
+  color: var(--text);
+  background: var(--bg);
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+}
+
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+.post-list { margin-top: 2rem; }
+.post-item {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+.post-item h2 { font-size: 1.3rem; margin-bottom: 0.5rem; }
+.post-item h2 a { color: var(--text); }
+.post-meta { font-size: 0.85rem; color: #888; margin-bottom: 0.75rem; }
+.post-tags { margin-left: 0.75rem; }
+.tag {
+  display: inline-block;
+  background: #f0ebe0;
+  padding: 0.1rem 0.5rem;
+  border-radius: 3px;
+  font-size: 0.8rem;
+  margin-right: 0.3rem;
+}
+.post-excerpt { font-size: 0.95rem; color: #555; }
+
+blockquote {
+  border-left: 3px solid var(--accent);
+  background: #f9f5ed;
+  padding: 0.75rem 1rem;
+  margin: 1rem 0;
+  font-style: italic;
+}
+
+@media (max-width: 600px) {
+  body { font-size: 16px; padding: 1rem; }
+}

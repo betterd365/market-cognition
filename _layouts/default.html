@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% if page.title and page.title != "首页" %}{{ page.title }} · {% endif %}{{ site.title }}</title>
+  <link rel="stylesheet" href="{{ '/css/style.css' | relative_url }}">
+  {% seo %}
+</head>
+<body>
+  <header>
+    <h1><a href="{{ '/' | relative_url }}">{{ site.title }}</a></h1>
+    {% if site.tagline %}<p class="tagline">{{ site.tagline }}</p>{% endif %}
+  </header>
+  <main>
+    {{ content }}
+  </main>
+</body>
+</html>
