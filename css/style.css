@@ -1,59 +1,119 @@
-/* Market Cognition — 暖色阅读友好风格 */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
 :root {
   --bg: #fdfaf6;
-  --text: #333;
-  --accent: #c44;
+  --card: #fff;
   --border: #e8e0d5;
-  --card-bg: #fff;
-  --max-width: 680px;
+  --text: #333;
+  --muted: #888;
+  --accent: #b8541e;
+  --code-bg: #f5f0e8;
+  --shadow: 0 1px 3px rgba(0,0,0,.04);
+  --radius: 8px;
 }
-
-* { box-sizing: border-box; margin: 0; padding: 0; }
 
 body {
   font-family: Georgia, "Noto Serif SC", "Source Han Serif SC", serif;
-  font-size: 18px;
-  line-height: 1.8;
+  font-size: 17px;
+  line-height: 1.85;
   color: var(--text);
   background: var(--bg);
-  max-width: var(--max-width);
+  max-width: 720px;
   margin: 0 auto;
-  padding: 2rem 1.5rem;
+  padding: 48px 24px;
 }
 
-a { color: var(--accent); text-decoration: none; }
-a:hover { text-decoration: underline; }
+/* ── 页头 ── */
+.site-header {
+  padding: 2rem 0 1.5rem;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 2rem;
+}
+.site-header h1 { font-size: 1.6rem; font-weight: 400; }
+.site-header p  { color: var(--muted); margin-top: .25rem; }
 
-.post-list { margin-top: 2rem; }
+/* ── 文章列表(首页) ── */
+.post-list { list-style: none; }
 .post-item {
-  background: var(--card-bg);
+  background: var(--card);
   border: 1px solid var(--border);
-  border-radius: 6px;
-  padding: 1.5rem;
-  margin-bottom: 1.5rem;
+  border-radius: var(--radius);
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 1.25rem;
+  box-shadow: var(--shadow);
 }
-.post-item h2 { font-size: 1.3rem; margin-bottom: 0.5rem; }
-.post-item h2 a { color: var(--text); }
-.post-meta { font-size: 0.85rem; color: #888; margin-bottom: 0.75rem; }
-.post-tags { margin-left: 0.75rem; }
-.tag {
-  display: inline-block;
-  background: #f0ebe0;
-  padding: 0.1rem 0.5rem;
-  border-radius: 3px;
-  font-size: 0.8rem;
-  margin-right: 0.3rem;
-}
-.post-excerpt { font-size: 0.95rem; color: #555; }
+.post-item h2 { font-size: 1.2rem; font-weight: 400; margin-bottom: .3rem; }
+.post-item h2 a { color: inherit; text-decoration: none; }
+.post-item h2 a:hover { color: var(--accent); }
+.post-item .meta { font-size: .85rem; color: var(--muted); }
 
+/* ── 文章页 ── */
+.post { margin-top: 1.5rem; }
+.post h2 { margin: 1.2rem 0 .5rem; font-size: 1.3rem; font-weight: 500; }
+.post h3 { margin: 1.0rem 0 .4rem; font-size: 1.1rem; font-weight: 500; }
+.post p { margin-bottom: .95rem; }
+
+/* ── 代码块：防止溢出 ── */
+pre {
+  background: #faf8f5;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1rem 1.2rem;
+  margin: .8rem 0 1.2rem;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  font-size: .88rem;
+  line-height: 1.65;
+}
+pre code {
+  font-family: "SF Mono", "Fira Code", "JetBrains Mono", Consolas, monospace;
+  font-size: inherit;
+  white-space: pre;
+  background: none;
+  padding: 0;
+}
+code {
+  background: #f3efe9;
+  font-family: "SF Mono", "Fira Code", Consolas, monospace;
+  font-size: .9em;
+  color: #5e4a33;
+  padding: .1em .4em;
+  border-radius: 2px;
+}
+pre code {
+  white-space: pre;
+  color: #3e3a36;
+  padding: 0;
+}
+
+/* ── 引用块 ── */
 blockquote {
-  border-left: 3px solid var(--accent);
-  background: #f9f5ed;
-  padding: 0.75rem 1rem;
-  margin: 1rem 0;
-  font-style: italic;
+  border-left: 3px solid #c9a96e;
+  background: #f9f7f2;
+  margin: 1.1rem 0;
+  padding: .75rem 1.25rem;
+  color: #6b5e4c;
 }
 
-@media (max-width: 600px) {
-  body { font-size: 16px; padding: 1rem; }
+/* ── 表格 ── */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+  font-size: .92em;
+}
+table th, table td {
+  border: 1px solid var(--border);
+  padding: .65rem .85rem;
+  text-align: left;
+}
+table th { background: #fbf8f2; font-weight: 500; }
+
+/* ── 图片 ── */
+img { max-width: 100%; border-radius: 4px; }
+
+/* ── 响应式 ── */
+@media (max-width: 640px) {
+  body { padding: 1rem; font-size: 16px; }
+  pre { margin-left: -0.5rem; margin-right: -0.5rem; border-radius: 0; }
 }
